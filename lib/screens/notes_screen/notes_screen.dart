@@ -139,7 +139,7 @@ class _NotesScreenState extends State<NotesScreen> {
                               style: TextStyle(fontSize: 16),
                             ),
                             Container(
-                              height: 96, // Set a fixed height for the selected files container
+                              height: 96,
                               child: ListView.builder(
                                 itemCount: selectedFiles?.files.length ?? 0,
                                 itemBuilder: (context, index) {
@@ -151,10 +151,9 @@ class _NotesScreenState extends State<NotesScreen> {
                                       color: kBlack,
                                       borderRadius: BorderRadius.circular(10.0),
                                       border: Border.all(
-                                        color:
-                                            kDarkModeLightBlue, // Border color
-                                        width: 1.0, // Border width
-                                      ), // Set the border radius
+                                        color: kDarkModeLightBlue,
+                                        width: 1.0,
+                                      ),
                                     ),
                                     margin: EdgeInsets.symmetric(
                                         horizontal: 0.0, vertical: 2.0),
