@@ -149,11 +149,7 @@ class _NotesScreenState extends State<NotesScreen> {
                                         EdgeInsets.symmetric(horizontal: 5.0),
                                     decoration: BoxDecoration(
                                       color: kBlack,
-                                      borderRadius: BorderRadius.circular(10.0),
-                                      border: Border.all(
-                                        color: kDarkModeLightBlue,
-                                        width: 1.0,
-                                      ),
+                                      borderRadius: BorderRadius.circular(30.0),
                                     ),
                                     margin: EdgeInsets.symmetric(
                                         horizontal: 0.0, vertical: 2.0),
