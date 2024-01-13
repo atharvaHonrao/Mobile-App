@@ -252,6 +252,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                       currentPage = 2;
                     });
                     Navigator.pop(context);
+                    
                   },
                 ),
                 ListTile(
@@ -268,6 +269,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                   onTap: () {
                     setState(() {
                       currentPage = 3;
+                      GoRouter.of(context).push("/department");
                     });
                     // Navigator.push(context);
                   },
