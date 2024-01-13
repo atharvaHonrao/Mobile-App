@@ -269,7 +269,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                     setState(() {
                       currentPage = 3;
                     });
-                    Navigator.pop(context);
+                    // Navigator.push(context);
                   },
                 ),
                 ListTile(

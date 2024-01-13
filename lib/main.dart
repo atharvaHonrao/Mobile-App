@@ -12,6 +12,7 @@ import 'package:tsec_app/provider/firebase_provider.dart';
 import 'package:tsec_app/new_ui/screens/splash_screen/splash_screen.dart';
 import 'package:tsec_app/new_ui/screens/main_screen/main_screen.dart';
 import 'package:tsec_app/new_ui/screens/login_screen/login_screen.dart';
+import 'package:tsec_app/new_ui/screens/department_screen/department_screen.dart';
 // import 'package:tsec_app/screens/event_detail_screen/event_details.dart';
 // import 'package:tsec_app/screens/login_screen/login_screen.dart';
 import 'package:tsec_app/screens/profile_screen/profile_screen.dart';
@@ -32,6 +33,7 @@ import 'provider/theme_provider.dart';
 import 'utils/department_enum.dart';
 import 'utils/init_get_it.dart';
 import 'utils/themes.dart';
+
 
 // To handle all the background messages
 // Currently not used but wont work if not present
@@ -121,7 +123,7 @@ class _TSECAppState extends ConsumerState<TSECApp> {
             bool justLoggedIn = justLoggedInSt == "true";
             return ProfilePage(justLoggedIn: justLoggedIn);
           },
-        )
+        ),
         // GoRoute(
         //   path: "/notifications",
         //   builder: (context, state) => const NotificationScreen(),
@@ -157,14 +159,14 @@ class _TSECAppState extends ConsumerState<TSECApp> {
         //     );
         //   },
         // ),
-        // GoRoute(
-        //   path: "/department",
-        //   builder: (context, state) {
-        //     final department = DepartmentEnum.values[
-        //         int.parse(state.uri.queryParameters["department"] as String)];
-        //     return DepartmentScreen(department: department);
-        //   },
-        // ),
+        GoRoute(
+          path: "/department",
+          builder: (context, state) {
+            final department = DepartmentEnum.values[
+                int.parse(state.uri.queryParameters["department"] as String)];
+            return DepartmentScreen(department: department);
+          },
+        ),
         // GoRoute(
         //   path: "/department-list",
         //   builder: (context, state) => const DepartmentListScreen(),
