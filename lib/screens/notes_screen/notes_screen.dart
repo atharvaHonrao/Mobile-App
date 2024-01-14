@@ -1,7 +1,8 @@
+import 'dart:io';
 import 'dart:ui';
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:tsec_app/utils/themes.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:open_file/open_file.dart';
 
 class NotesScreen extends StatefulWidget {
   const NotesScreen({Key? key}) : super(key: key);
@@ -41,6 +42,12 @@ class _NotesScreenState extends State<NotesScreen> {
     setState(() {
       selectedFiles!.files.remove(file);
     });
+  }
+
+  void openFile(String? filePath) {
+    if (filePath != null) {
+      OpenFile.open(filePath);
+    }
   }
 
   @override
@@ -148,32 +155,36 @@ class _NotesScreenState extends State<NotesScreen> {
                                     padding:
                                         EdgeInsets.symmetric(horizontal: 5.0),
                                     decoration: BoxDecoration(
-                                      color: kBlack,
+                                      color: Colors.black,
                                       borderRadius: BorderRadius.circular(30.0),
                                     ),
                                     margin: EdgeInsets.symmetric(
                                         horizontal: 0.0, vertical: 2.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Expanded(
-                                          child: Text(
-                                            file.name ?? '',
-                                            style: TextStyle(
+                                    child: GestureDetector(
+                                      onTap: () => openFile(file.path),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              file.name ?? '',
+                                              style: TextStyle(
                                                 fontSize: 10,
-                                                color: Colors.blue),
-                                            overflow: TextOverflow.ellipsis,
+                                                color: Colors.blue,
+                                              ),
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
                                           ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () => deselectFile(file),
-                                          child: Icon(
-                                            Icons.cancel,
-                                            color: kDarkModeLightBlue,
+                                          GestureDetector(
+                                            onTap: () => deselectFile(file),
+                                            child: Icon(
+                                              Icons.cancel,
+                                              color: Colors.blue,
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   );
                                 },
