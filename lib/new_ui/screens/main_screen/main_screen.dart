@@ -269,7 +269,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                   onTap: () {
                     setState(() {
                       currentPage = 3;
-                      GoRouter.of(context).push("/department");
+                      GoRouter.of(context).push("/department-list");
                     });
                     // Navigator.push(context);
                   },

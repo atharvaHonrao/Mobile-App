@@ -20,6 +20,7 @@ import 'package:tsec_app/screens/profile_screen/profile_screen.dart';
 import 'package:tsec_app/utils/notification_type.dart';
 import 'firebase_options.dart';
 import 'models/student_model/student_model.dart';
+import 'new_ui/screens/departmentlist_screen/department_list.dart';
 import 'provider/app_state_provider.dart';
 import 'provider/shared_prefs_provider.dart';
 import 'provider/theme_provider.dart';
@@ -167,10 +168,10 @@ class _TSECAppState extends ConsumerState<TSECApp> {
             return DepartmentScreen(department: department);
           },
         ),
-        // GoRoute(
-        //   path: "/department-list",
-        //   builder: (context, state) => const DepartmentListScreen(),
-        // ),
+        GoRoute(
+          path: "/department-list",
+          builder: (context, state) => const DepartmentListScreen(),
+        ),
       ],
       refreshListenable: ref.watch(appStateProvider),
     );
