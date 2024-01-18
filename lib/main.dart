@@ -20,6 +20,7 @@ import 'package:tsec_app/screens/profile_screen/profile_screen.dart';
 import 'package:tsec_app/utils/notification_type.dart';
 import 'firebase_options.dart';
 import 'models/student_model/student_model.dart';
+import 'new_ui/screens/committees_screen.dart';
 import 'new_ui/screens/departmentlist_screen/department_list.dart';
 import 'provider/app_state_provider.dart';
 import 'provider/shared_prefs_provider.dart';
@@ -133,10 +134,10 @@ class _TSECAppState extends ConsumerState<TSECApp> {
         //   path: "/theme",
         //   builder: (context, state) => const ThemeScreen(),
         // ),
-        // GoRoute(
-        //   path: "/committee",
-        //   builder: (context, state) => const CommitteesScreen(),
-        // ),
+        GoRoute(
+          path: "/committee",
+          builder: (context, state) => const CommitteesScreen(),
+        ),
         // GoRoute(
         //   path: "/tpc",
         //   builder: (context, state) => const TPCScreen(),

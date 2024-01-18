@@ -1,5 +1,4 @@
 import 'dart:typed_data';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -16,13 +15,6 @@ import 'package:tsec_app/screens/profile_screen/profile_screen.dart';
 import 'package:tsec_app/utils/notification_type.dart';
 import 'package:tsec_app/utils/timetable_util.dart';
 import 'package:url_launcher/url_launcher_string.dart';
-// import '../../models/event_model/event_model.dart';
-// import '../../provider/event_provider.dart';
-// import '../../utils/image_assets.dart';
-
-// import '../../utils/launch_url.dart';
-// import '../../utils/themes.dart';
-// import '../../widgets/custom_scaffold.dart';
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 
 class MainScreen extends ConsumerStatefulWidget {
@@ -70,18 +62,6 @@ class _MainScreenState extends ConsumerState<MainScreen> {
 
     if (data != null) {
       NotificationType.makeTopic(ref, data);
-
-      // String studentYear = data.gradyear.toString();
-      // String studentBranch = data.branch.toString();
-      // String studentDiv = data.div.toString();
-      // String studentBatch = data.batch.toString();
-      // ref.read(notificationTypeProvider.notifier).state = NotificationTypeC(
-      //     notification: "All",
-      //     yearTopic: studentYear,
-      //     yearBranchTopic: "$studentYear-$studentBranch",
-      //     yearBranchDivTopic: "$studentYear-$studentBranch-$studentDiv",
-      //     yearBranchDivBatchTopic:
-      //         "$studentYear-$studentBranch-$studentDiv-$studentBatch");
     }
     Uint8List? profilePic = ref.watch(profilePicProvider);
     StudentModel? studentDetails = ref.watch(studentModelProvider);
@@ -250,6 +230,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                   onTap: () {
                     setState(() {
                       currentPage = 2;
+                      GoRouter.of(context).push("/committee");
                     });
                     Navigator.pop(context);
                     
